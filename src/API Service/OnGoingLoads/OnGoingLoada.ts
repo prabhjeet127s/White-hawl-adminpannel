@@ -1,6 +1,6 @@
 import axiosInstance from "../../Utils/axiosInstance";
 
-export const Getongoingload = (
+export const Getongoingload = async (
     offset?: number,
     limit?: number,
     status?: string,
@@ -14,9 +14,8 @@ export const Getongoingload = (
 
     const query=`/api/load/?${params.toString()}`
 
-    const response=axiosInstance.get(query)
+    const response=  await axiosInstance.get(query)
     return response;
-
 
 }
 

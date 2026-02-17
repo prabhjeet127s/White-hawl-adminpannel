@@ -25,7 +25,7 @@ const Sidebar = ({ sidebarOpen,setSidebaropen}:SidebarProps) => {
   },
   {
     title: "Loads",
-    route: "/loads",
+    route: "/ongoing-loads",
     icon: <MdLocalShipping />,
   },
   {
@@ -35,7 +35,7 @@ const Sidebar = ({ sidebarOpen,setSidebaropen}:SidebarProps) => {
   },
   {
     title: "Completed Loads",
-    route: "/completed-loads",
+    route: "/complete-loads",
     icon: <MdLocalShipping />,
   },
   {
@@ -45,7 +45,7 @@ const Sidebar = ({ sidebarOpen,setSidebaropen}:SidebarProps) => {
   },
   {
     title: "Drivers Requests",
-    route: "/drivers-requests",
+    route: "/driver-request",
     icon: <GiSteeringWheel />,
   },
   {
@@ -55,7 +55,7 @@ const Sidebar = ({ sidebarOpen,setSidebaropen}:SidebarProps) => {
   },
   {
     title: "Operators Requests",
-    route: "/operators-requests",
+    route: "/pending-fleetowner",
     icon: <FaUserCog />,
   },
   {

@@ -13,6 +13,10 @@ import Fleetownerprofile from './Pages/Fleetowner/Fleetownerprofile'
 import Traileradds from './Pages/Trailer/Traileradds'
 import Trailerdetail from './Pages/Trailer/Trailerdetail'
 import Driver from './Pages/Drivers/Driver'
+import Ongoingload from './Pages/OnGoingLoad/Ongoingload'
+import Completedload from './Pages/CompletedLoads/Completedload'
+import Pendingfleetowner from './Pages/Pendingfleetowner/Pendingfleetowner'
+import Driverrequest from './Pages/Driverrequest/Driverrequest'
 
 function App() {
   const { pathname } = useLocation()
@@ -48,6 +52,11 @@ function App() {
           <Route path='/traileradds' element={<Traileradds/>} />
           <Route path='/Trailer'  element={<Trailerdetail/>}  />
           <Route path='/drivers'  element={<Driver/>}  />
+          <Route path='ongoing-loads' element={<Ongoingload/>}  />
+          <Route path='/complete-loads' element={<Completedload/>} />
+          <Route path="/pending-fleetowner" element={<Pendingfleetowner/>} />
+          <Route path='/driver-request' element={<Driverrequest/>} />
+
           
          </Routes>
         </Defaultlayout>
