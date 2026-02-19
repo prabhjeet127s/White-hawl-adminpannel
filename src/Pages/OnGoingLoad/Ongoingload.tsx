@@ -1,10 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useEffect } from "react";
 import { Getongoingload } from "../../API Service/OnGoingLoads/OnGoingLoada";
 import { useState } from "react";
+import { IoIosFunnel } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+
 
 
 const Ongoingload = () => {
+    const navigate=useNavigate();
     const [viewdoc, setviewdoc] = useState(false);
     const [selectuser, setselectuser] = useState<[]>([])
 
@@ -31,6 +34,26 @@ const Ongoingload = () => {
     return (
 
         <>
+            <div className="flex items-center justify-between w-full p-6 bg-gray-100">
+                <div className="flex items-center gap-4">
+
+                    <input
+                        type="text"
+                        placeholder="Search"
+                        className="w-96 px-4 py-3 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-red-400" />
+
+                    <button className="bg-red-500 hover:bg-red-600 text-white p-3 rounded-xl transition duration-200">
+                        <IoIosFunnel size={20} />
+
+                    </button>
+                </div>
+
+                <button onClick={()=>navigate('/add-loads')} className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-2xl font-semibold text-lg shadow-md transition duration-200">
+                    + Create Loads
+                </button>
+            </div>
+
+{/**down seaction */}
             <div className="p-6">
                 <div className="bg-white rounded-2xl shadow-md overflow-x-auto">
                     <table className="w-full text-sm">
@@ -133,14 +156,14 @@ const Ongoingload = () => {
                                     <a key={i}
                                         target="_blank"
                                         href={doc.mediaUrl}  >
-                                        Document {i+1} </a>
+                                        Document {i + 1} </a>
                                 </li>
                             ))}
 
                         </ul>
-                        <button 
-                        onClick={()=>setviewdoc(!viewdoc)}
-                        className="bg-gray-200 hover:bg-gray-300  ml-5 p-3 px-5 mb-3 font-semibold rounded-lg "  >Close</button>
+                        <button
+                            onClick={() => setviewdoc(!viewdoc)}
+                            className="bg-gray-200 hover:bg-gray-300  ml-5 p-3 px-5 mb-3 font-semibold rounded-lg "  >Close</button>
 
                     </div>
                 </div>

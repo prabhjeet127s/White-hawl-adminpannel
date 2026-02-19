@@ -96,7 +96,7 @@ const Sidebar = ({ sidebarOpen,setSidebaropen}:SidebarProps) => {
             className={({ isActive }) =>
               `flex items-center gap-3 p-3  text-xl rounded-xl w-72 
               ${isActive ? "bg-gray-800 text-white" : "text-gray-600"}
-              hover:bg-gray-600`
+              hover:bg-gray-600 hover:text-white `
             }
           >
             {item.icon}  

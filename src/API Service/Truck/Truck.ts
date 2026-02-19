@@ -23,11 +23,16 @@ export const getTrucksList = async (
 }
 
 
-export const addTrucksList= async (data)=>{
+export const UpdateTrucksList =async(data)=>{
+    const response =  await axiosInstance.put('/api/vehicle/',data)
+    
+    return response
+
+} 
 
 
-    const response=await axiosInstance.post('/api/vehicle/',data)
+export const Deletetrucklist = async (id)=>{
 
-
-
+  const response= await axiosInstance.delete(`/api/fleetOwner/${id}`)
+  return response
 }

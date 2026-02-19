@@ -33,6 +33,9 @@ const Trailerdetail = () => {
         navigate('/traileradds')
 
     }
+    const handleeditclick = (id) => {
+    navigate(`/trailer-edit/${id}`)
+  }
 
     return (
         <div className="p-6">
@@ -89,7 +92,7 @@ const Trailerdetail = () => {
                                     </button>
                                 </td>
                                 <td className="py-4 flex gap-4">
-                                    <button>edit</button>
+                                    <button onClick={()=>handleeditclick(item.vehicleId)}  >edit</button>
                                     <button className="text-red-500">delete</button>
                                 </td>
                             </tr>

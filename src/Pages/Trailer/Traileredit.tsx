@@ -4,8 +4,9 @@ import { useState } from 'react'
 import { getFleetOwnerList } from '../../API Service/Fleetowner/Fleetowner'
 import { AddTrucks } from '../../API Service/Truck/Addtrucks'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
-const Truckadd = () => {
+const Traileredit = () => {
 
     const navigate = useNavigate();
 
@@ -13,8 +14,6 @@ const Truckadd = () => {
     const [capacity, setCapacity] = useState('')
     const [fleet, setFleet] = useState("")
     const [phone, setPhone] = useState("")
-    const [make, setMake] = useState("")
-    const [model, setModel] = useState("")
     const [address, setAddress] = useState("")
     
 
@@ -31,7 +30,6 @@ const Truckadd = () => {
         const newfiles = e.target.files ? Array.from(e.target.files) : [];
 
         if (newfiles.length === 0) return;
-
         const updatefiles = [...vechicleimage, ...newfiles];
         setVechicleimage(updatefiles)
 
@@ -41,9 +39,10 @@ const Truckadd = () => {
         setvechicleimageprev(updatedPreviews)
 
     }
+
     const handleback = () => {
 
-        navigate('/truck')
+        navigate('/trailer')
     }
 
     /** 
@@ -65,13 +64,12 @@ const Truckadd = () => {
         try {
             const data = {
                 ownerId: fleet,
-                vehicleType: "truck",
+                vehicleType: "trailer",
                 countryCode: "+1",
                 mobile: phone,
                 licensePlateNo: license,
                 capacityInTons: Number(capacity),
-                make: make,
-                model: model,
+                
                 address: address,
                 location: {
                     type: "Point",
@@ -88,10 +86,25 @@ const Truckadd = () => {
             console.log(error)
         }
 
-        navigate('/truck')
+        navigate('/tailer')
 
 
-    }
+    } 
+    const trucklist = data?.data?.data?.vehicles;
+
+    
+        useEffect(() => {
+            if (trucklist) {
+                setLicense(trucklist?.licensePlateNo)
+                setCapacity(trucklist?.capacityInTons)
+                setFleet(trucklist?.ownerName)
+                setPhone(trucklist?.mobile)
+            
+                setAddress(trucklist?.address)
+            }
+    
+        }, [data])
+    
 
     const fleetowner = data?.data?.data?.fleetOwners || []
 
@@ -106,7 +119,7 @@ const Truckadd = () => {
 
             <form action="" onSubmit={Onclickhandle} >
 
-                <h3 className='text-2xl font-semibold p-1 pt-4 '  >Add Trucks</h3>
+                <h3 className='text-2xl font-semibold p-1 pt-4 '  >Add Tailer</h3>
 
                 <section   >
                     <h3 className='p-4 font-semibold text-xl   ' >Truck Details</h3>
@@ -177,23 +190,7 @@ const Truckadd = () => {
 
                         </div>
 
-                        {/**helo */}
-                        <div className='flex flex-col '>
-                            <label htmlFor="License Plate">Make *
-                            </label>
-                            <input value={make} onChange={(e) => setMake(e.target.value)}
-                                className='bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition  w-77 p-4 rounded-xl '
-                                placeholder='Make (e.g...Freightliner' type="text" id='License Plate' required />
-                        </div>
-
-                        <div className='flex flex-col '>
-                            <label htmlFor="Model">Model *
-                            </label>
-                            <input value={model} onChange={(e) => setModel(e.target.value)}
-                                className='bg-gray-50  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition  w-77 p-4 rounded-xl '
-                                placeholder='Model (e.g;Cascadia) ' type="text" id='Model' required />
-                        </div>
-
+                       
                         <div className='flex flex-col '>
                             <label htmlFor="Address">Address *
                             </label>
@@ -268,4 +265,4 @@ const Truckadd = () => {
     )
 }
 
-export default Truckadd
+export default Traileredit

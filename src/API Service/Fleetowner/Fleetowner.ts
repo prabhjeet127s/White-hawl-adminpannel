@@ -1,5 +1,6 @@
 
 
+import axios from "axios";
 import axiosInstance from "../../Utils/axiosInstance";
 
 export const getFleetOwnerList = async (
@@ -20,4 +21,20 @@ export const getFleetOwnerList = async (
 
 
 } 
-console.log(Response)
+
+
+export const updateOwnerstatus =async(data)=>{
+
+    const response=await axiosInstance.put('/api/fleetOwner/status',data)
+    return response;
+
+
+}
+
+
+
+export const Deletefleetowner = async (id)=>{
+
+  const response= await axiosInstance.delete(`/api/fleetOwner/${id}`)
+  return response
+}

@@ -17,6 +17,9 @@ import Ongoingload from './Pages/OnGoingLoad/Ongoingload'
 import Completedload from './Pages/CompletedLoads/Completedload'
 import Pendingfleetowner from './Pages/Pendingfleetowner/Pendingfleetowner'
 import Driverrequest from './Pages/Driverrequest/Driverrequest'
+import Trucksedit from './Pages/Trucks/Trucksedit'
+import Addloads from './Pages/OnGoingLoad/Addloads'
+import Traileredit from './Pages/Trailer/Traileredit'
 
 function App() {
   const { pathname } = useLocation()
@@ -56,6 +59,9 @@ function App() {
           <Route path='/complete-loads' element={<Completedload/>} />
           <Route path="/pending-fleetowner" element={<Pendingfleetowner/>} />
           <Route path='/driver-request' element={<Driverrequest/>} />
+          <Route path='/trucks-edit/:id' element={<Trucksedit/>}  />
+          <Route path='/add-loads' element={<Addloads/>}  />
+          <Route path='/trailer-edit/:id' element={<Traileredit/>}  />
 
           
          </Routes>
