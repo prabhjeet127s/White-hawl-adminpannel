@@ -18,6 +18,14 @@ export const Getongoingload = async (
     return response;
 
 }
+export const CreateOnGoingLoads=async(payload)=>{
+
+
+    const response= axiosInstance.post('/api/load',payload)
+    return response;
+
+}
+
 
 
 
