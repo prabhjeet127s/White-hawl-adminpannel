@@ -1,8 +1,4 @@
-
-
-import axios from "axios";
 import axiosInstance from "../../Utils/axiosInstance";
-
 export const getFleetOwnerList = async (
     offset?: number,
     limit?: number
@@ -23,18 +19,14 @@ export const getFleetOwnerList = async (
 } 
 
 
-export const updateOwnerstatus =async(data)=>{
+export const updateOwnerstatus =async(data:any)=>{
 
     const response=await axiosInstance.put('/api/fleetOwner/status',data)
     return response;
 
 
 }
-
-
-
-export const Deletefleetowner = async (id)=>{
-
+export const Deletefleetowner = async (id:any)=>{
   const response= await axiosInstance.delete(`/api/fleetOwner/${id}`)
   return response
 }

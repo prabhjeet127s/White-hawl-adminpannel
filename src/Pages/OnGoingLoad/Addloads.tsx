@@ -5,10 +5,7 @@ import { FaLongArrowAltLeft } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { CreateOnGoingLoads } from '../../API Service/OnGoingLoads/OnGoingLoada';
 
-
-
 const Addloads = () => {
-
   const navigate = useNavigate();
 
   const [pickuploc, setpickuploc] = useState<string>("")
@@ -47,7 +44,7 @@ const Addloads = () => {
 
   console.log(data)
 
-  
+
   const handleback = () => {
     navigate('/ongoing-loads')
   }
@@ -99,29 +96,22 @@ const Addloads = () => {
     ]
   }
 
-  const handleonclick = async (e) => {
+  const handleonclick = async (e:any) => {
     alert('clicked ')
 
-    e.preventDefault();   // ✅ FIXED
-
+    e.preventDefault();  
     const response = await CreateOnGoingLoads(payload)
     navigate('/ongoing-loads')
-
+    console.log(response)
   }
 
-
-
   return (
-
-
-    <div className=" min-h-screen flex justify-center items-start  border border-gray-500 rounded-lg  h-[400px]">
-
-      <div className=' shadow-2xl bg-white  mt-4   min-w-5xl  h-[590px]' >
+    <div className=" min-h-screen flex justify-center items-start  border border-gray-500 rounded-lg  h-100">
+      <div className=' shadow-2xl bg-white  mt-4   min-w-5xl  h-147.5' >
         <h3 onClick={handleback} className=' text-xl  mt-5 mx-14 flex gap-1 ' >  <FaLongArrowAltLeft className='pt-2 text-2xl  ' />
           Back</h3>
-
         <form action="" onSubmit={handleonclick}  >
-          <div className='border-2 border-gray-200 mb-3  m-10 mt-7  overflow-y-auto h-[410px] overflow-hidden  p-6' >
+          <div className='border-2 border-gray-200 mb-3  m-10 mt-7  overflow-y-auto h-102.5 overflow-hidden  p-6' >
             <h3 className='text-2xl font-semibold pb-6 '>Load #</h3>
             <h3 className='mb-5'>Pickup Details
             </h3>
@@ -184,7 +174,7 @@ const Addloads = () => {
                   className="w-full border border-gray-300 bg-white rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
                 <input
-                  onChange={(e) => setpickuplat(e.target.value)}
+                  onChange={(e:React.ChangeEvent<HTMLInputElement>) => setpickuplat(Number(e.target.value))}
                   value={pickuplat}
                   type="number"
                   defaultValue="0"
@@ -192,7 +182,7 @@ const Addloads = () => {
                 />
 
                 <input
-                  onChange={(e) => setpickuplon(e.target.value)}
+                  onChange={(e) => setpickuplon(Number(e.target.value))}
                   value={pickuplon}
                   type="number"
                   defaultValue="0"
@@ -242,7 +232,7 @@ const Addloads = () => {
                     today.setMinutes(minutes);
                     today.setSeconds(0);
 
-                    setdroptime(today.getTime()); // ✅ number
+                    setdroptime(today.getTime()); 
                   }}
                   placeholder="--:--"
                   className="w-full border border-gray-300 bg-white rounded-md px-4 py-4 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -260,7 +250,9 @@ const Addloads = () => {
                   className="w-full border border-gray-300 bg-white rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
                 <input
-                  onChange={(e) => setdroplat(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setdroplat(Number(e.target.value))
+                  }
                   value={droplat}
                   type="number"
                   defaultValue="0"
@@ -268,7 +260,7 @@ const Addloads = () => {
                 />
 
                 <input
-                  onChange={(e) => setdroplon(e.target.value)}
+                  onChange={(e:React.ChangeEvent<HTMLInputElement>) => setdroplon(Number(e.target.value))}
                   value={droplon}
                   type="number"
                   defaultValue="0"
@@ -302,7 +294,7 @@ const Addloads = () => {
                 />
 
                 <input
-                  onChange={(e) => setweight(e.target.value)}
+                  onChange={(e:React.ChangeEvent<HTMLInputElement>) => setweight(Number(e.target.value))}
                   value={weight}
                   type="text"
                   placeholder="Weight"
@@ -319,13 +311,6 @@ const Addloads = () => {
 
 
               </div>
-
-
-
-
-
-
-
             </div>
 
 
@@ -343,14 +328,14 @@ const Addloads = () => {
                   className='w-full border border-gray-300 bg-white rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400'
                   name="" id="">
                   <option value="Select trailer">Select trailer</option>
-                  {vehicles?.map((item) => (
+                  {vehicles?.map((item:any) => (
                     <option value={item?.licensePlateNo}>{item.licensePlateNo}
                     </option>
                   ))}
                 </select>
 
                 <input
-                  onChange={(e) => setloaddescription(e.target.value)}
+                  onChange={(e:any) => setloaddescription(e.target.value)}
                   value={loaddescription}
                   type="text"
                   placeholder="Load Instructions"
@@ -409,21 +394,13 @@ const Addloads = () => {
 
             </div>
 
-
-
           </div>
           <button className=' mx-7 mt-5 border rounded-xl mb-7 text-white  shadow-2xl bg-red-500 px-4 p-2 text-lg' >submit</button>
 
         </form>
-
-
       </div>
 
     </div>
-
-
-
-
 
   )
 }
