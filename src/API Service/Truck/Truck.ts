@@ -23,7 +23,7 @@ export const getTrucksList = async (
 }
 
 
-export const UpdateTrucksList =async(data)=>{
+export const UpdateTrucksList =async(data:any)=>{
     const response =  await axiosInstance.put('/api/vehicle/',data)
     
     return response
@@ -31,7 +31,7 @@ export const UpdateTrucksList =async(data)=>{
 } 
 
 
-export const Deletetrucklist = async (id)=>{
+export const Deletetrucklist = async (id:any)=>{
 
   const response= await axiosInstance.delete(`/api/fleetOwner/${id}`)
   return response

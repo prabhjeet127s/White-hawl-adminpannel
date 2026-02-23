@@ -1,4 +1,3 @@
-import React from "react"
 import DashboardCard from "../../Components/Dashboardcard";
 
 import { FaDollarSign, FaTruck, FaWallet, FaUser } from "react-icons/fa";

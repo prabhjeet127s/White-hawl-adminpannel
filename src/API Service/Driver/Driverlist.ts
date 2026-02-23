@@ -4,8 +4,6 @@ export const getDriverList = async (
   offset?: number,
   limit?: number,
   status?:string
-  
-
 ) => {
   const params = new URLSearchParams();
 
@@ -20,15 +18,12 @@ export const getDriverList = async (
   return response;
 };
 
-
-export const UpdateDriverstatus= async (data)=>{
-
+export const UpdateDriverstatus= async (data:any)=>{
     const response= await axiosInstance.put('/api/driver/status',data)
     return response;
 }
 
-
-export const Deletedriver= async (id)=>{
+export const Deletedriver= async (id:any)=>{
 
   const response= await axiosInstance.delete(`/api/driver/${id}`)
   return response

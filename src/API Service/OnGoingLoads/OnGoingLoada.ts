@@ -18,7 +18,7 @@ export const Getongoingload = async (
     return response;
 
 }
-export const CreateOnGoingLoads=async(payload)=>{
+export const CreateOnGoingLoads=async(payload:any)=>{
 
 
     const response= axiosInstance.post('/api/load',payload)

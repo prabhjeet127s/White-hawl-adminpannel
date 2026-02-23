@@ -1,14 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { Deletedriver, getDriverList } from "../../API Service/Driver/Driverlist";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { UpdateDriverstatus } from "../../API Service/Driver/Driverlist";
 import { useState } from "react";
 import { IoFunnelOutline } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
-
-
-
 
 interface Driver {
     id: number;
@@ -64,7 +61,7 @@ const Driver = () => {
     }, [status])
 
 
-    const handleeditclick = (driver) => {
+    const handleeditclick = (driver:any) => {
 
         setids(driver.driverId)
         setuser(driver)
@@ -72,7 +69,7 @@ const Driver = () => {
 
     }
 
-    const handleisdeleteclick = (id) => {
+    const handleisdeleteclick = (id:any) => {
         setids(id)
         setIsdeletemodal(!Isdeletemodal)
 
@@ -116,7 +113,7 @@ const Driver = () => {
 
                     </button>
 
-                    <select value={filterstatus} onChange={(e) => setfilterstatus(e.target.value)}
+                    <select value={filterstatus} onChange={(e:any) => setfilterstatus(e.target.value)}
                         className="px-3 py-3 rounded-lg bg-white border border-gray-300
                      focus:outline-none focus:ring-2 focus:ring-blue-500">
                         <option>All</option>
@@ -144,10 +141,10 @@ const Driver = () => {
                         </thead>
 
                         <tbody>
-                            {drivers.map((driver, index: number) => {
+                            {drivers.map((driver:any, index: number) => {
                                 const licenseImage =
                                     driver?.documentArray?.find(
-                                        (doc) => doc.docType === "license"
+                                        (doc:any) => doc.docType === "license"
                                     )?.mediaUrl || "";
 
                                 return (
@@ -256,7 +253,7 @@ const Driver = () => {
             {Isdeletemodal && <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
                 <div className="bg-white w-full max-w-md rounded-2xl shadow-lg p-3 relative">
                     <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
-                        <div className="bg-white w-[420px] rounded-xl shadow-lg p-6 relative">
+                        <div className="bg-white w-105 rounded-xl shadow-lg p-6 relative">
 
                             <button
                                 onClick={() => setIsdeletemodal(!Isdeletemodal)}

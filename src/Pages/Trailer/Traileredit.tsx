@@ -58,7 +58,7 @@ const Traileredit = () => {
 
 
 
-    const Onclickhandle = async (e) => {
+    const Onclickhandle = async (e:any) => {
 
         e.preventDefault();
         try {
@@ -77,6 +77,7 @@ const Traileredit = () => {
                 }
             };
             const response = await AddTrucks(data)
+            console.log(response)
             alert("VEHICLE ADDED SUCESSFULLY")
 
 
@@ -147,7 +148,7 @@ const Traileredit = () => {
                             </label>
                             <select value={fleet} onChange={(e) => setFleet(e.target.value)} className=" w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" >
                                 <option value="">Select Owner  </option>
-                                {fleetowner?.map((value) => (
+                                {fleetowner?.map((value:any) => (
                                     <option
                                         key={value?.fleetOwnerId}
                                         value={value?.fleetOwnerId}
@@ -248,18 +249,7 @@ const Traileredit = () => {
                         </button>
                     </div>
                 </section>
-
-
             </form>
-
-
-
-
-
-
-
-
-
         </div>
         </div>
     )

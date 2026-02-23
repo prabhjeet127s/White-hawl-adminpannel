@@ -2,18 +2,11 @@
 import { FaFilter } from "react-icons/fa";
 
 const Trips = () => {
-
-
-
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      
-      
       <h1 className="text-2xl font-semibold mb-6">
         Trips
       </h1>
-
-      
       <div className="flex items-center gap-3 mb-6">
         <input
           type="text"

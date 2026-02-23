@@ -33,10 +33,9 @@ const Trailerdetail = () => {
         navigate('/traileradds')
 
     }
-    const handleeditclick = (id) => {
+    const handleeditclick = (id:any) => {
     navigate(`/trailer-edit/${id}`)
   }
-
     return (
         <div className="p-6">
             <div className="flex justify-between items-center mb-6">
@@ -51,7 +50,7 @@ const Trailerdetail = () => {
                 <input
                     type="text"
                     placeholder="Search"
-                    className="w-[300px] h-[45px] px-6 p-7  rounded-xl font-semibold border border-gray-300 bg-white  focus:outline-none"
+                    className="w-75 h-11.25 px-6 p-7  rounded-xl font-semibold border border-gray-300 bg-white  focus:outline-none"
                 />
                 <div className='bg-red-500 hover:bg-red-600 text-white p-5 rounded-lg' >
                     <FiFilter size={20} />

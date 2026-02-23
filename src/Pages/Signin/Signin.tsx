@@ -41,7 +41,7 @@ const Signin = () => {
     return (
         <div className='flex h-screen '>{/*left box*/}
             <div className=' w-[60%]  bg-amber-300    h-full rounded-4xl ' >
-                <img src='/loginMain.jpg' className='  object-cover w-[100%]  h-full' alt="none" />
+                <img src='/loginMain.jpg' className='  object-cover w-full  h-full' alt="none" />
             </div>
 
 

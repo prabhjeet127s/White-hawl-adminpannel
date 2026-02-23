@@ -1,4 +1,3 @@
-import React from "react";
 import { FaFilter } from "react-icons/fa";
 
 const Driverrequest = () => {
@@ -25,7 +24,6 @@ const Driverrequest = () => {
         </button>
       </div>
 
-    
       <div className="bg-white rounded-3xl shadow-sm p-6">
         <div className="grid grid-cols-6 text-gray-600 font-medium mb-6">
           <p>S.no</p>
@@ -45,5 +43,4 @@ const Driverrequest = () => {
     </div>
   );
 };
-
 export default Driverrequest;

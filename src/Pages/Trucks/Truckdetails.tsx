@@ -29,10 +29,10 @@ const Truckdetails = () => {
   if (isLoading) return <div className="p-6">Loading...</div>;
   if (isError) return <div className="p-6 text-red-500">Error loading trucks</div>;
 
-  const handleeditclick = (id) => {
+  const handleeditclick = (id:any) => {
     navigate(`/trucks-edit/${id}`)
   }
-  const handleisdeleteclick = (id) => {
+  const handleisdeleteclick = (id:any) => {
     setids(id)
     setIsdeletemodal(!Isdeletemodal)
     console.log(Isdeletemodal)
@@ -61,7 +61,7 @@ const Truckdetails = () => {
 
     <>
 
-      <div className="bg-white rounded-xl h-auto min-h-[490px] shadow-sm overflow-hidden">
+      <div className="bg-white rounded-xl h-auto min-h-122.5 shadow-sm overflow-hidden">
         <div className="overflow-x-auto">
           <table className="min-w-full text-sm text-left text-gray-700">
 
@@ -137,7 +137,7 @@ const Truckdetails = () => {
        {Isdeletemodal && <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
             <div className="bg-white w-full max-w-md rounded-2xl shadow-lg p-3 relative">
               <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
-                <div className="bg-white w-[420px] rounded-xl shadow-lg p-6 relative">
+                <div className="bg-white w-105 rounded-xl shadow-lg p-6 relative">
 
                   <button
                     onClick={() => setIsdeletemodal(!Isdeletemodal)}
@@ -163,8 +163,6 @@ const Truckdetails = () => {
               </div>
 
             </div></div>}
-
-
     </>
   );
 };

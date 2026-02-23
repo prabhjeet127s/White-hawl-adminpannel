@@ -1,5 +1,4 @@
 import { useQuery } from '@tanstack/react-query'
-import React from 'react'
 import { Getpendingfleetowner } from '../../API Service/Pendingfleetowner/Pendingfleetowner'
 import { FaCheck, FaTimes, FaFilter } from "react-icons/fa"
 
@@ -54,7 +53,7 @@ const Pendingfleetowner = () => {
                     </thead>
 
                     <tbody>
-                        {fleetOwners.map((item, index) => (
+                        {fleetOwners.map((item:any, index:any) => (
                             <tr key={item.fleetOwnerId} className="border-none">
 
                                 <td className="py-6">{index + 1}</td>

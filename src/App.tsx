@@ -45,7 +45,6 @@ function App() {
 
       (
 
-
         <Defaultlayout>
         <Routes>
           <Route path='/'  element={<Dashboard/>}  />
@@ -65,7 +64,6 @@ function App() {
           <Route path='/trailer-edit/:id' element={<Traileredit/>}  />
           <Route path='/trips' element={<Trips/>}  />
  
-          
          </Routes>
         </Defaultlayout>
 

@@ -47,7 +47,7 @@ const Trucksedit = () => {
 
     }, [data])
 
-    const handleonform = async (e) => {
+    const handleonform = async (e:any) => {
 
         e.preventDefault();
         try {
@@ -69,6 +69,7 @@ const Trucksedit = () => {
             };
             const response = await UpdateTrucksList(data)
             alert("VEHICLE Updated SUCESSFULLY")
+            console.log(response)
 
         } catch (error) {
             console.log(error)
@@ -119,7 +120,7 @@ const Trucksedit = () => {
                                 </label>
                                 <select value={fleet} onChange={(e) => setFleet(e.target.value)} className=" w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" >
                                     <option value={fleet}>Select Owner  </option>
-                                    {owners?.map((value) => (
+                                    {owners?.map((value:any) => (
                                         <option
                                             key={value?.fleetOwnerId}
                                             value={value?.fleetOwnerId}
@@ -240,7 +241,6 @@ const Trucksedit = () => {
 
 
                         <div className=' p-4 pt-9 text-center' >
-
                             <button className=' p-2 rounded-2xl text-2xl border-2  hover:bg-red-500 transition duration-150 font-bold'>
                                 Submit Here
                             </button>

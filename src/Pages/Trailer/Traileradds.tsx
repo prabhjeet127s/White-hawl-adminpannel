@@ -40,11 +40,7 @@ const Traileradds = () => {
 
 
 
-
-
-
-
-    const Onclickhandle = async (e) => {
+    const Onclickhandle = async (e:any) => {
 
         e.preventDefault();
         try {
@@ -161,7 +157,7 @@ const Traileradds = () => {
                                 </label>
                                 <select value={fleet} onChange={(e) => setFleet(e.target.value)} className=" w-full p-4 rounded-xl border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" >
                                     <option value="">Select Owner  </option>
-                                    {fleetowner?.map((value) => (
+                                    {fleetowner?.map((value:any) => (
                                         <option
                                             key={value?.fleetOwnerId}
                                             value={value?.fleetOwnerId}

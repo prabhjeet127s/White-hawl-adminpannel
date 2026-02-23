@@ -5,7 +5,7 @@ import { Deletefleetowner, getFleetOwnerList, updateOwnerstatus } from "../../AP
 import { FiSearch } from "react-icons/fi";
 import { HiOutlineFilter } from "react-icons/hi";
 import { useState } from "react";
-import axiosInstance from "../../Utils/axiosInstance";
+
 
 const Fleetownerprofile = () => {
 
@@ -22,7 +22,7 @@ const Fleetownerprofile = () => {
 
     const fleetowner = data?.data?.data?.fleetOwners || [];
 
-    const handleeditclick = async (item) => {
+    const handleeditclick = async (item:any) => {
 
         setselectstatus(item)
         setisEditModal(!isEditModal)
@@ -46,7 +46,7 @@ const Fleetownerprofile = () => {
 
     }
 
-      const handleDeleteClick = async (id) => {
+      const handleDeleteClick = async (id:any) => {
             try {
           const response=   await Deletefleetowner(id);
                 console.log(response)
@@ -68,23 +68,23 @@ const Fleetownerprofile = () => {
 
 
                 <div className="flex items-center gap-5">
-                    <div className="  w-[380px]">
+                    <div className="  w-95">
                         <input
                             type="text"
                             placeholder="Search"
-                            className="w-full h-[50px] m-10 p-2 pr-10 rounded-xl bg-white
+                            className="w-full h-12.5 m-10 p-2 pr-10 rounded-xl bg-white
                              focus:outline-none text-gray-700"
                         />
                         <FiSearch className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500" />
                     </div>
-                    <button className="w-[60px] h-[50px] m bg-red-500 
+                    <button className="w-15 h-12.5 m bg-red-500 
                        rounded-xl flex items-center justify-center 
                        hover:bg-red-600 transition">
                         <HiOutlineFilter className="text-white text-xl" />
                     </button>
                     <div>
                         <select
-                            className="w-[120px] h-[50px] rounded-xl bg-white
+                            className="w-30 h-12.5 rounded-xl bg-white
                            px-4 text-gray-700 focus:outline-none" >
                             <option>All</option>
                             <option>Active</option>
@@ -114,7 +114,7 @@ const Fleetownerprofile = () => {
 
                         {/* Body */}
                         <tbody className="text-gray-800 border-none ">
-                            {fleetowner.map((item, index: number) => (
+                            {fleetowner.map((item:any, index: number) => (
                                 <tr key={item.fleetOwnerId} className="">
 
                                     <td className="py-5 ">{index + 1}</td>
