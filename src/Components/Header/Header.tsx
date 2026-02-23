@@ -16,7 +16,7 @@ const Header = ({ sidebarOpen, setSidebarOpen }: prop) => {
 
 
   const [logouthandleopen, setlogouthandleopen] = useState(false)
-  const [showmodal, setshowmodal] = useState(true)
+  const [showmodal, setshowmodal] = useState(false)
 
 
   const handlelogoutopen = () => {
@@ -24,12 +24,14 @@ const Header = ({ sidebarOpen, setSidebarOpen }: prop) => {
 
   }
   const handlelogout = () => {
+
+  setshowmodal(!showmodal)
+
    setTimeout(() => {
     localStorage.removeItem("token");
     sessionStorage.removeItem("token");
     navigate("/auth/signin");
   }, 500);
-  setshowmodal(!showmodal)
   }
 
 
