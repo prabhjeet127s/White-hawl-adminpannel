@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import React from 'react'
+
 import { Getongoingload } from '../../API Service/OnGoingLoads/OnGoingLoada'
 import { CiFilter } from "react-icons/ci";
 import { useState } from 'react';
@@ -24,7 +24,7 @@ const Completedload = () => {
     if (isError) return <p className="p-6 text-red-500">Error loading loads</p>
     console.log(loads)
 
-    const handleload = (doc) => {
+    const handleload = (doc:any) => {
         setselectdoc(doc)
         setisdocopen(!isdocopen)
 
@@ -66,7 +66,7 @@ const Completedload = () => {
 
                             <tbody>
 
-                                {loads.map((load) => {
+                                {loads.map((load:any) => {
 
                                     const pickupDate = load.createdAt
                                         ? new Date(load.createdAt).toLocaleDateString("en-GB", {
@@ -84,13 +84,11 @@ const Completedload = () => {
                                                 year: "numeric"
                                             })
                                         : "--";
-
                                     return (
                                         <tr
                                             key={load.loadId}
                                             className="border-none hover:bg-gray-50 transition"
                                         >
-
                                             {/* load*/}
                                             <td className="p-3 flex">
                                                 <p className="font-semibold text-gray-800">
@@ -170,7 +168,7 @@ const Completedload = () => {
             {isdocopen && (<div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
                 <div className="bg-white w-full max-w-md rounded-2xl shadow-lg p-3 relative">
                     <div className='p-4'  >
-                    {selectdoc.map((value,i)=>(
+                    {selectdoc.map((value:any,i)=>(
                           <a 
                           className='text-xl font-semibold '
 
@@ -184,11 +182,6 @@ const Completedload = () => {
                   
                     <button  onClick={()=>setisdocopen(!isdocopen)}  className='text-left bg-gray-200  px-5 mx-4  p-2 rounded-xl     '>Close</button>
                     
-
-
-
-
-
                 </div>
             </div>)}
 
