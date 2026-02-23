@@ -40,7 +40,7 @@ const Signin = () => {
 
     return (
         <div className='flex h-screen '>{/*left box*/}
-            <div className=' w-[60%]  bg-amber-300    h-full rounded-4xl ' >
+            <div className=' w-[60%]    h-full rounded-4xl ' >
                 <img src='/loginMain.jpg' className='  object-cover w-full  h-full' alt="none" />
             </div>
 
@@ -59,7 +59,7 @@ const Signin = () => {
                                     <label htmlFor="Email">Email</label>
                                     <input value={email} onChange={(e) => setemail(e.target.value)} type="email" className='border-gray-200 bg-blue-100 border-4  p-2 rounded-2xl ' name="" placeholder='Enter your email ' id="" />
                                 </div>
-                                <div className='flex flex-col gap-2 p-2 ' >
+                                <div className='flex flex-col w-lg  gap-2 p-2 ' >
                                     <label htmlFor="Password"       >Password</label>
                                     <input value={password} onChange={(e) => setpassword(e.target.value)} type="Password" className='border-gray-200  bg-blue-100  text-2xl border-4  p-2 rounded-2xl ' name="" placeholder='Enter your password ' id="" />
                                 </div>
