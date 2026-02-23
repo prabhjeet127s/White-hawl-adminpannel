@@ -20,6 +20,7 @@ import Driverrequest from './Pages/Driverrequest/Driverrequest'
 import Trucksedit from './Pages/Trucks/Trucksedit'
 import Addloads from './Pages/OnGoingLoad/Addloads'
 import Traileredit from './Pages/Trailer/Traileredit'
+import Trips from './Pages/Trips/Trips'
 
 function App() {
   const { pathname } = useLocation()
@@ -62,7 +63,8 @@ function App() {
           <Route path='/trucks-edit/:id' element={<Trucksedit/>}  />
           <Route path='/add-loads' element={<Addloads/>}  />
           <Route path='/trailer-edit/:id' element={<Traileredit/>}  />
-
+          <Route path='/trips' element={<Trips/>}  />
+ 
           
          </Routes>
         </Defaultlayout>
