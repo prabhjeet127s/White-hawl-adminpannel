@@ -50,7 +50,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="grid grid-cols-4 gap-6 p-6">
+    <div className="grid overflow-x-hidden w-full grid-cols-4 gap-6 p-6">
       {dashboardData.map((item, index) => (
         <DashboardCard
           key={index}
